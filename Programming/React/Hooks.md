@@ -1,8 +1,9 @@
-## Hooks
+
+# Hooks
 
 > **Hooks** are a quite recent addition to React. They let you use state and other features without writing a **class**. We can’t call hooks inside logical operations, loops nor nested functions. This allows to call hooks **in the same order** every component renders.
 
-### useState
+## useState
 
 The first type of Hook is called **State Hook**. It is used to create and update local state in functional component. We need to import the **useState** hook, that will allow to create local state.
 
@@ -32,7 +33,7 @@ setState(state + 1) // output: 3
 > 
 
 ---
-### useEffect
+## useEffect
 
 The second type is called is **Effect Hook**, which is used to perform side effect in a function component **after it is rendered** to the DOM.
 
@@ -58,7 +59,6 @@ By using this Hook, React will remember the function you passed (we’ll refer t
 Calling the `useEffect` inside a component we can access the `count` state variable (or any props) right from the *effect*. We don’t need any special API (build-in function) to read it. 
 
 > **useEffect()** run after every render, by default. It runs both after the first render and after every update.
-> 
 
 You might notice that the function passed to useEffect **is going to be different on every render**. This is intentional, since this is what lets us read the `count` value from inside the *effect* without worrying about it getting stale(becoming obsolete).
 
