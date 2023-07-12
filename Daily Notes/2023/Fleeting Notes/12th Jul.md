@@ -5,4 +5,6 @@ Mare fino alle 17(credo?), nel mentre abbiamo nuotato un po' e poi ho ricomincia
 Mi sono invogliato. Lo faccio, però non so ancora che prassi utilizzare. Devo utilizzare lo stesso che utilizza il libro che leggo? Oppure posso utilizzare prevalentemente lo Spagnolo/Inglese per migliorare e memorizzare i vocaboli?
 
 ---
-Tags: #Dorian_Gray
+Tags: 
+Links: [[The Picture of Dorian Gray]]
+Beyond the iThe books starts 
