@@ -5,6 +5,8 @@ Mare fino alle 17(credo?), nel mentre abbiamo nuotato un po' e poi ho ricomincia
 Mi sono invogliato. Lo faccio, però non so ancora che prassi utilizzare. Devo utilizzare lo stesso che utilizza il libro che leggo? Oppure posso utilizzare prevalentemente lo Spagnolo/Inglese per migliorare e memorizzare i vocaboli?
 
 ---
-Tags: 
-Links: [[The Picture of Dorian Gray]]
-Beyond the iThe books starts 
+>Tags: 
+>Links: [[The Picture of Dorian Gray]]
+
+Beyond the long preface, the book debuts with the presentation of these two characters. **Mr. Henry**, a married gentleman annoyed of his marriage and a young artist named **Basil Hallward**. 
+Basil is portraying into the constrained easel the figure of this man, and the man  
