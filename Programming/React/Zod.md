@@ -15,4 +15,11 @@ This is where Zod does, *runtime verification* and *schema validation*.
 Runtime checks help with getting correctly validated data on the server side. In a case where the user is filling out some kind of form, TypeScript doesn’t know if the user inputs are as good as you expect them to be on the server at runtime.
 **Zod** helps with *data integrity* and prevents sending out garbage values to the database. 
 
-## Zod benefits
+## How to use Zod
+---
+Now here we are
+```TypeScript
+import { z } from "zod"
+const dataInputFromUser = z.string().min(8).max(16)
+dataInputFromUser.parse("A long text")
+```
