@@ -57,10 +57,41 @@ If you want to defined custom intervals or messages you can use **Zod refinement
 **refine** is a method that let's you customize validation on your schema. It also allows you to defined additional checks on the data
 ```TS
 const userBio = z.string().refine((i) => i.length <= 255, {
-	message: `You Bio can't surpass 255 characters`
+	message: `Your Bio can't surpass 255 characters`
 })
 ```
 
 ## Complex Schema
 ---
-There could be cases where you
+There could be cases where you need a schema that is nearly identical from the one you just defined earlier, apart from a new form/fields. In these situations, you can use Zod methods `merge` and `extend`.
+```TS
+const genericString = z.string().min(1).max(18),
+const FormData = z.object({
+  firstName: genericString, 
+  lastName: genericString, 
+  username: genericString,
+});
+
+const ComplexForm = FormData.extend({
+	email: z.string().email(),
+	number: z.number.min(7).max(10)
+})
+
+const isURL = (value: string) => { // Regular expression pattern for matching URL format
+	const urlRegex = /^(https?:\/\/)?(www\.)?([a-zA-Z0-9-]+)\.([a-zA-Z]{2,3})$/;
+	return urlRegex.test(value);
+};
+
+const BlogData = z.object({
+	bio: z.string().refine(i => i.length <= 255,{
+		message: `Your Bio can't surpass 255 characters`
+	}),
+	url:z.string().refine(isURL,{
+		message: `URL not valid`
+	})
+})
+
+const BlogUser = FormData.merge(BlogData)
+```
+We can define a *generic* to use as value for our key in the `z.object`. We can also create a copy of the object and extend it instead of duplicating the original schema.
+Also we created a new schema by merging `FormData` with `BlogData`.
