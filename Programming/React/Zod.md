@@ -23,3 +23,30 @@ import { z } from "zod"
 const dataInputFromUser = z.string().min(8).max(16)
 dataInputFromUser.parse("A long text")
 ```
+Primitive values are not just limited to `string`, but provide other methods such as `number`, `bigint`, `boolean`, and `date`. There are a couple of empty types as well, like `undefined`, `null`, and `void`.
+
+
+---
+Most of the user-facing form require more than a single entries. This is where **Zod object**: it creates a schema that can set properties you want to check at runtime.
+```TS
+const formData = z.object({
+	firstName = z.string().min(2).max(32),
+	lastName = z.string().min(2).max(16),
+	phone = z.string().min(10).max(14).optional(),
+	email = z.string().email(),
+	url = z.string().url().optional(),
+})
+
+type FormData = z.infer<typeof FormData>;
+
+const validateFormData = (inputs: FormData) => {
+  try {
+	  const isValidData = FormData.parse(inputs);
+	  console.log('Validated Form Data:', isValidData);
+	  return isValidData;
+  } catch (error) {
+  console.error('Validation Error:', error.message);
+  throw error; // Rethrow the validation error to be handled elsewhere if needed. }
+};
+```
+If the schema is not handled correctly 
