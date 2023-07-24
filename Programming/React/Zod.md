@@ -26,6 +26,7 @@ dataInputFromUser.parse("A long text")
 Primitive values are not just limited to `string`, but provide other methods such as `number`, `bigint`, `boolean`, and `date`. There are a couple of empty types as well, like `undefined`, `null`, and `void`.
 
 ---
+### object
 Most of the user-facing form require more than a single entries. This is where to use **Zod object**: it creates a schema that can set properties you want to check at runtime.
 ```TS
 const formData = z.object({
@@ -51,6 +52,7 @@ const validateFormData = (inputs: FormData) => {
 
 >With `z.infer` we don't have to rewrite a type with every single key-entry of the defined object; we can simply infer it's type with `z.infer<typeof zObject>`
 
+### refine
 If you want to defined custom intervals or messages you can use **Zod refinements**.
 **refine** is a method that let's you customize validation on your schema. It also allows you to defined additional checks on the data
 ```TS
@@ -58,3 +60,7 @@ const userBio = z.string().refine((i) => i.length <= 255, {
 	message: `You Bio can't surpass 255 characters`
 })
 ```
+
+## Complex Schema
+---
+There could be cases where you
