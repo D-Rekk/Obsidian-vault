@@ -33,7 +33,7 @@ export default async function Posts() {
 ```
 ---
 ### client-side fetching
-In the **client components** the official documentation suggests to use *SWR* or *React Query* to handle the data fetching. Yet React introduced a way to accept async hooks inside components: it's the `use` hook built conceptually like await, but without type errors.
+In the **client components** the official documentation suggests to use *SWR* or *React Query* to handle the data fetching. Yet React introduced a way to accept async functions inside components: it's the `use` hook built conceptually like await, but without type errors.
 ```TS
 "use client"
 const getPosts = async (): Promise<Post[]> => {
@@ -59,5 +59,6 @@ export default function ClientPosts() {
 }
 ```
 ---
+## Api Routes
 
 
