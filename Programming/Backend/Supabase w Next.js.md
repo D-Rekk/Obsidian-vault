@@ -29,4 +29,5 @@ This is a function that creates a table `todos` (if it doesn't exists already). 
 - **title**: text value.
 - **is_complete**: boolean that defaults to false
 - **user_id**: a UUID column. `reference` is a keyword that references the value of another table, in this case `auth.users`. It defaults to `auth.uid()`, a *Supabase* function that retrieves the unique id of the authenticated user. This establishes a relationship between user_id and auth.
+ This is 
 - **auth.users**:
